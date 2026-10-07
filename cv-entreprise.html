@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Germain Pilliat — Ingénieur data</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --blue: #2E75B6;
+    --light-blue: #A0B0C0;
+    --text: #2D2D2D;
+    --text-light: #555555;
+    --bg-accent: #F2F6FA;
+    --white: #FFFFFF;
+    --sidebar-w: 220px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  body {
+    font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+    font-size: 10.5px;
+    line-height: 1.4;
+    color: var(--text);
+    background: #e8e8e8;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 20px auto;
+    background: var(--white);
+    box-shadow: 0 2px 20px rgba(0,0,0,.12);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: var(--sidebar-w) 1fr;
+    overflow: hidden;
+  }
+
+  @media print {
+    body { background: none; }
+    .page { margin: 0; box-shadow: none; width: 100%; min-height: 100vh; }
+    .download-btn { display: none !important; }
+  }
+
+  .download-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: var(--navy);
+    color: var(--white);
+    border: 2px solid var(--blue);
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+    z-index: 9999;
+  }
+
+  .header {
+    grid-column: 1 / -1;
+    background: var(--navy);
+    padding: 20px 32px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+  }
+  .header .subtitle {
+    font-size: 13px;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+  .header .contact {
+    font-size: 10px;
+    color: var(--light-blue);
+  }
+  .header .contact a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .header .contact a:hover {
+    text-decoration: underline;
+  }
+
+  aside.sidebar {
+    background: var(--navy);
+    padding: 20px 15px;
+    color: var(--white);
+  }
+  .sidebar .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--blue);
+    text-transform: uppercase;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(46, 117, 182, 0.3);
+    padding-bottom: 2px;
+  }
+  .sidebar .entry-title { font-weight: 700; font-size: 10px; }
+  .sidebar .entry-sub { font-size: 9px; color: var(--light-blue); margin-bottom: 6px; }
+  .sidebar .skill-item { font-size: 10px; padding: 1.5px 0; }
+
+  main.main {
+    padding: 20px 30px;
+  }
+
+  .accroche {
+    background: var(--bg-accent);
+    padding: 12px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--blue);
+    font-size: 10.5px;
+  }
+
+  .section-heading {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    border-bottom: 2px solid var(--blue);
+    padding-bottom: 3px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .job { margin-bottom: 12px; }
+  .job-header { display: flex; justify-content: space-between; align-items: flex-start; }
+  .job-title { font-size: 11.5px; font-weight: 700; color: var(--navy); }
+  .job-meta { font-size: 9.5px; color: var(--text-light); }
+  .job-company { font-size: 10.5px; font-weight: 600; color: var(--blue); margin: 2px 0; }
+  .sub-section { font-size: 10.5px; font-weight: 700; color: var(--text); margin-top: 6px; margin-bottom: 2px; }
+
+  .job ul { list-style: none; margin-top: 4px; }
+  .job ul li {
+    padding-left: 12px;
+    position: relative;
+    margin-bottom: 2px;
+  }
+  .job ul li::before {
+    content: "•";
+    color: var(--blue);
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+  }
+
+  .competence-line { margin-bottom: 6px; line-height: 1.4; }
+  .competence-line strong { color: var(--blue); }
+
+@media screen and (max-width: 768px) {
+    :root {
+      --sidebar-w: 35%;
+    }
+
+    .page {
+      width: 100%;
+      min-height: auto;
+      margin: 0;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      font-size: 8.5px;
+    }
+
+    .header h1 { font-size: 18px; }
+    .header .subtitle { font-size: 10px; }
+    .header .contact { font-size: 8px; }
+    .header { padding: 15px 10px; }
+
+    aside.sidebar { padding: 10px 8px; }
+    .sidebar .section-title { font-size: 9px; margin-top: 10px; }
+    .sidebar .entry-title { font-size: 8.5px; }
+    .sidebar .entry-sub { font-size: 7.5px; }
+    .sidebar .skill-item { font-size: 8.5px; }
+
+    main.main { padding: 10px 12px; }
+    .accroche { font-size: 8.5px; padding: 8px; }
+    .section-heading { font-size: 10px; }
+    .job-title { font-size: 9.5px; }
+    .job-meta { font-size: 8px; }
+    .job-company { font-size: 9px; }
+    .sub-section { font-size: 9px; }
+    .job ul li { font-size: 8.5px; }
+    .competence-line { font-size: 8.5px; }
+
+    .job-header { flex-direction: column; }
+
+    .download-btn {
+      top: 10px;
+      left: 10px;
+      font-size: 11px;
+      padding: 8px 14px;
+      position: fixed !important;
+      transform: translateZ(0);
+    }
+}
+  .points { margin-bottom: 4px; }
+  .points .competence-line { margin-bottom: 4px; }
+  .old-line { margin-bottom: 4px; }
+  .old-line strong { color: var(--navy); }
+</style>
+</head>
+<body>
+
+<button class="download-btn" onclick="window.print()">Exporter en PDF</button>
+
+<div class="page">
+  <header class="header">
+    <h1>GERMAIN PILLIAT</h1>
+    <div class="subtitle">Ingénieur data — Oracle, ETL et reporting décisionnel</div>
+    <div class="contact">gp.cv@posteo.ch &nbsp;•&nbsp; Mulhouse — ouvert à Bâle et au télétravail &nbsp;•&nbsp; <a href="https://gpilliat.github.io">gpilliat.github.io</a> &nbsp;•&nbsp; <a href="https://github.com/gpilliat">github.com/gpilliat</a></div>
+  </header>
+
+  <aside class="sidebar">
+    <div class="section-title">Formation</div>
+    <div class="entry-title">Diplôme d'Ingénieur</div>
+    <div class="entry-sub">Informatique — UTBM (2002), obtenu en reprise d'études</div>
+    <div class="entry-title">BTS Informatique de gestion</div>
+    <div class="entry-sub">1999</div>
+    <div class="entry-title">Analyste-programmeur</div>
+    <div class="entry-sub">Marine Nationale, Cobol &amp; C (1991)</div>
+    <div class="entry-title">Talend Data Integration</div>
+    <div class="entry-sub">2016</div>
+    <div class="entry-title">SAP BusinessObjects</div>
+    <div class="entry-sub">Administration &amp; Designer (2015)</div>
+
+    <div class="section-title">Langues</div>
+    <div class="skill-item">Français — Maternel</div>
+    <div class="skill-item">Anglais — C1 écrit (test UHA), B1/B2 oral</div>
+    <div class="skill-item">Italien — A1</div>
+    <div class="skill-item">Arabe — Notions (écrit, débutant)</div>
+
+    <div class="section-title">Bases de données</div>
+    <div class="skill-item">Oracle 19c (PL/SQL, OCCI, tuning)</div>
+    <div class="skill-item">PostgreSQL</div>
+    <div class="skill-item">Microsoft SQL Server</div>
+
+    <div class="section-title">ETL / BI</div>
+    <div class="skill-item">Talend / Talaxie</div>
+    <div class="skill-item">SAP BusinessObjects</div>
+    <div class="skill-item">JasperReports / ReportServer</div>
+
+    <div class="section-title">Langages</div>
+    <div class="skill-item">SQL / PL/SQL / T-SQL</div>
+    <div class="skill-item">Python (scripts d'automatisation)</div>
+    <div class="skill-item">Java (Swing, Apache POI, JavaMail)</div>
+    <div class="skill-item">Bash / PowerShell</div>
+    <div class="skill-item">HTML / CSS / JavaScript</div>
+    <div class="skill-item">XML / XSLT</div>
+
+    <div class="section-title">Systèmes &amp; Outils</div>
+    <div class="skill-item">Linux (RHEL 8/9, Ubuntu)</div>
+    <div class="skill-item">Windows Server / IIS</div>
+    <div class="skill-item">Apache / Tomcat / Nginx</div>
+    <div class="skill-item">Git / GitHub</div>
+
+    <div class="section-title">IA Générative</div>
+    <div class="skill-item">Claude Code, Claude, Gemini</div>
+    <div class="skill-item">Ollama, Mistral</div>
+    <div class="skill-item">RAG local, Vectorisation</div>
+
+    <div class="section-title">Domaines métier</div>
+    <div class="skill-item">Finance &amp; comptabilité publique</div>
+    <div class="skill-item">Ressources humaines</div>
+    <div class="skill-item">Éducation &amp; planification</div>
+
+    <div class="section-title">Centres d'intérêt</div>
+    <div class="skill-item">Photographie • Écriture</div>
+    <div class="skill-item">Running • Randonnée</div>
+
+
+  </aside>
+
+  <main class="main">
+    <div class="accroche"><strong>Ingénieur data spécialisé Oracle et décisionnel</strong>, je fiabilise des flux de données critiques et je les transforme en indicateurs pour les directions. Mon point fort : reprendre des systèmes complexes et non documentés, les comprendre, les corriger et les faire évoluer sans interruption de service. Du mainframe Cobol aux assistants IA, j'ai accompagné chaque génération de technologies.</div>
+
+    <div class="section-heading">Points forts</div>
+    <div class="points">
+      <div class="competence-line"><strong>Data &amp; BI — </strong>Oracle 19c (PL/SQL, plans d'exécution, OCCI), PostgreSQL, SQL Server ; ETL Talend ; SAP BusinessObjects, JasperReports. Indicateurs multi-sources pour la direction.</div>
+      <div class="competence-line"><strong>Systèmes hérités &amp; migrations — </strong>Reprise par rétro-ingénierie d'un ETL critique non documenté ; migrations du mainframe Bull vers Clipper/C++ et d'une plateforme de reporting vers une autre.</div>
+      <div class="competence-line"><strong>Double compétence métier — </strong>Finance et comptabilité publique (formateur sur le progiciel financier de l'État), RH, éducation : je parle le langage des directions fonctionnelles.</div>
+      <div class="competence-line"><strong>IA générative — </strong>Claude Code et Gemini comme outils de travail, pilotés au quotidien : code, analyse SQL, documentation technique. Veille : RAG local (Ollama, Mistral).</div>
+
+    </div>
+
+    <div class="section-heading">Expériences professionnelles</div>
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Ingénieur data &amp; décisionnel (ingénieur d'études)</span>
+        <span class="job-meta">2013 — Aujourd'hui | Mulhouse</span>
+      </div>
+      <div class="job-company">Université de Haute-Alsace — Direction du Numérique</div>
+      <div class="sub-section">Data &amp; décisionnel</div>
+      <ul>
+        <li>Indicateurs pour la direction du pilotage croisant trois systèmes hétérogènes (planification, scolarité, RH) via des liens de bases Oracle : taux d'occupation des salles, répartition analytique des heures d'enseignement par formation, y compris pour les cours partagés.</li>
+        <li>Référentiel de 466 salles sur 9 entités, rapprochant le patrimoine immobilier et la planification : base du calcul des taux d'occupation.</li>
+        <li>Vues SQL unifiant 5 domaines (RH, finances, achats, scolarité, pilotage) sur ~2 500 tables et 50 Go de données transactionnelles. Univers SAP BusinessObjects.</li>
+      </ul>
+      <div class="sub-section">Reprise d'un ETL critique</div>
+      <ul>
+        <li>Reprise et maintien en conditions opérationnelles d'un ETL critique non documenté (C++/OCCI, PL/SQL Oracle), base du calcul de la rémunération des heures d'enseignement : rétro-ingénierie, correction des anomalies, documentation complète.</li>
+        <li>Correction de défauts hérités, dont un filtrage qui écartait jusqu'à 2 500 heures d'enseignement par an des indicateurs d'occupation.</li>
+        <li>Audits de fiabilité des données, démontrés par croisement des bases sur trois exercices. Bascule annuelle des schémas Oracle (Data Pump).</li>
+      </ul>
+      <div class="sub-section">Flux &amp; exploitation</div>
+      <ul>
+        <li>2 flux Talend en production depuis 8 ans sans intervention (synchronisation annuaire LDAP, Oracle vers PostgreSQL, anonymisation SHA-256), maintenus aujourd'hui sous Talaxie, le fork open source de Talend.</li>
+        <li>Développement d'une application Java (Swing, Apache POI, JavaMail) pour la Scolarité centrale : envoi personnalisé des e-mails aux étudiants admis à partir de fichiers Excel, avec contrôle de la qualité des données (civilités, champs vides, adresses invalides, doublons). En service pendant 2 ans.</li>
+        <li>Scripts Python d'automatisation, dont la synchronisation des comptes LimeSurvey avec l'annuaire LDAP.</li>
+        <li>Migration des rapports JasperReports d'OpenReport vers ReportServer, administration de la plateforme (authentification LDAP).</li>
+        <li>Référent technique d'une application de gestion des risques : mises à jour, serveur IIS, base PostgreSQL, relation avec l'éditeur.</li>
+        <li>Maintenance et durcissement de 8 serveurs Linux RHEL 8/9 (Dev &amp; Prod).</li>
+        <li>Référent fonctionnel pendant 3 ans du progiciel de gestion financière et comptable ; requêtes sur le progiciel de scolarité (630 tables, 1 500 index).</li>
+      </ul>
+
+    </div>
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Ingénieur consultant</span>
+        <span class="job-meta">2007 — 2011 | Paris / Metz</span>
+      </div>
+      <div class="job-company">CGI (ESN)</div>
+      <ul>
+        <li>Presstalis (30 mois) : maintenance évolutive et corrective d'un outil d'analyse des ventes de presse.</li>
+        <li>Ministère de l'Intérieur (12 mois) : formateur sur Chorus, le progiciel financier de l'État, et accompagnement des utilisateurs lors de son déploiement national.</li>
+        <li>EDF (3 mois, autonomie complète) : outils de surveillance proactive du parc de serveurs, détection anticipée d'incidents.</li>
+        <li>Air Liquide (3 mois, autonomie complète) : sécurisation d'une application web.</li>
+      </ul>
+
+    </div>
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Ingénieur concepteur développeur</span>
+        <span class="job-meta">2004 — 2005 | Strasbourg</span>
+      </div>
+      <div class="job-company">SQLI (ESN)</div>
+      <ul>
+        <li>Wrigley France (12 mois, autonomie complète) : conception et développement d'agrégations comptables, procédures stockées T-SQL (SQL Server), recette technique.</li>
+      </ul>
+
+    </div>
+
+    <div class="section-heading">Parcours antérieur</div>
+    <div class="old-line"><strong>2003 — Technicien informatique</strong>, Université de Haute-Alsace : parc informatique et assistance utilisateurs.</div>
+    <div class="old-line"><strong>1996 — 2000 — Gestionnaire de parc informatique</strong>, ministère de la Défense : parc et réseaux (Novell, Windows NT), formation des utilisateurs. BTS informatique de gestion obtenu en parallèle (1999).</div>
+    <div class="old-line"><strong>1991 — 1996 — Analyste-programmeur</strong>, Marine nationale : migration en équipe de 4 d'une application mainframe Bull (Cobol) vers Clipper/C++, puis maintenance et évolutions en autonomie pendant 3 ans.</div>
+
+  </main>
+</div>
+
+</body>
+</html>
