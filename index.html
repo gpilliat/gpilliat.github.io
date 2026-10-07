@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Germain Pilliat, ingénieur d'études bases de données et reporting</title>
+<meta name="description" content="Germain Pilliat, ingénieur d'études à Mulhouse : bases de données Oracle, reporting décisionnel et intégration SI. 35 ans d'informatique, du Cobol aux LLM.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗄️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F6F8; --surface:#FFFFFF; --ink:#14213D; --muted:#56607A;
+  --line:#D6DCE4; --track:#E4E8EE; --blue:#2747B8; --blue-soft:#C9D3F3; --ochre:#C9900F; --on-blue:#FFFFFF; --on-ochre:#14213D;
+  --font:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#0F1626; --surface:#162036; --ink:#E6EAF2; --muted:#9AA4BC;
+    --line:#26324D; --track:#1E2940; --blue:#8AA4FF; --blue-soft:#33437A; --ochre:#E8B84A; --on-blue:#0F1626; --on-ochre:#0F1626;
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-underline-offset:.2em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:2px}
+.wrap{max-width:72rem;margin:0 auto;padding:0 1.5rem}
+
+/* Barre du haut */
+.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:3.75rem}
+.brand{font-weight:700;font-stretch:115%;color:var(--ink);text-decoration:none;white-space:nowrap}
+.top nav{display:flex;gap:1.25rem;overflow-x:auto}
+.top nav a{color:var(--muted);text-decoration:none;font-size:.95rem;white-space:nowrap}
+.top nav a:hover{color:var(--ink)}
+@media (max-width:640px){.top nav{display:none}}
+
+/* En-tête */
+.hero{padding-top:4.5rem;padding-bottom:3rem}
+.hero h1{margin:0;font-stretch:125%;font-weight:800;font-size:clamp(3rem,10.5vw,7.5rem);line-height:.92;letter-spacing:-.02em}
+.hero .role{margin:1.25rem 0 0;font-size:clamp(1.15rem,2.2vw,1.45rem);font-weight:500;font-stretch:105%;max-width:40ch}
+.hero .lead{margin:1.25rem 0 0;color:var(--muted);max-width:62ch}
+.links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.1rem;border-radius:6px;font-weight:600;font-size:.95rem;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn svg{width:1.1em;height:1.1em;flex:none}
+
+/* Frise 1991 – aujourd'hui */
+.frise{margin-top:4rem}
+.frise h2{font-size:1.05rem;font-weight:600;font-stretch:100%;margin:0 0 1rem;color:var(--muted)}
+.band{display:flex;gap:4px}
+.seg{flex:1 1 0;min-width:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:.15rem;min-height:4.75rem;padding:.6rem .85rem;border:0;margin:0;cursor:pointer;text-align:left;font:inherit;background:var(--blue);color:var(--on-blue);border-radius:4px;transform-origin:left center}
+.seg:hover{filter:brightness(1.1)}
+.seg[aria-pressed="true"]{background:var(--ochre);color:var(--on-ochre)}
+.seg .y{font-size:.8rem;font-variant-numeric:tabular-nums;opacity:.85;white-space:nowrap}
+.seg .t{font-weight:700;font-stretch:110%;font-size:1.05rem;line-height:1.2}
+.seg:first-child{border-radius:6px 4px 4px 6px}
+.seg:last-child{border-radius:4px 6px 6px 4px}
+@media (max-width:640px){
+  .seg{padding:.5rem .45rem;min-height:4rem}
+  .seg .y{font-size:.68rem;white-space:normal}
+  .seg .t{font-size:.9rem}
+}
+.caption{margin-top:1rem;min-height:4.5rem;padding:1rem 1.25rem;background:var(--surface);border-left:4px solid var(--ochre);border-radius:0 6px 6px 0}
+.caption .when{font-size:.9rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.caption .what{font-weight:600;margin-top:.1rem}
+.caption .tech{font-size:.95rem;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){
+  .seg{animation:grow .6s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes grow{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
+}
+
+/* Sections */
+section.block{padding:4.5rem 0;border-top:1px solid var(--line)}
+section.block > .wrap > h2{margin:0 0 2.25rem;font-stretch:120%;font-weight:750;font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.1;letter-spacing:-.01em}
+
+/* Missions */
+.missions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr));gap:2.25rem 3rem}
+.missions h3{margin:0 0 .5rem;font-size:1.15rem;font-weight:650}
+.missions p{margin:0;color:var(--muted);max-width:52ch}
+.missions strong{color:var(--ink);font-weight:650;font-variant-numeric:tabular-nums}
+
+/* Projets */
+.projects{list-style:none;margin:0;padding:0}
+.project{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:1rem 3rem;padding:2rem 0;border-bottom:1px solid var(--line)}
+.project:first-child{padding-top:0}
+.project h3{margin:0;font-size:1.35rem;font-weight:700;font-stretch:110%;line-height:1.25}
+.project .repo{display:inline-block;margin-top:.5rem;font-size:.92rem}
+.project p{margin:0 0 .75rem;max-width:62ch}
+.project .note{color:var(--muted);font-size:.97rem}
+.stack{display:flex;flex-wrap:wrap;gap:.4rem;margin:.9rem 0 0;padding:0;list-style:none}
+.stack li{font-size:.8rem;padding:.2rem .6rem;border-radius:999px;background:var(--blue-soft);color:var(--ink)}
+.project.featured h3{font-size:1.7rem}
+.badge{display:inline-block;margin-bottom:.6rem;font-size:.82rem;font-weight:600;color:var(--ochre)}
+@media (max-width:760px){.project{grid-template-columns:1fr}}
+
+/* Parcours */
+.jobs{list-style:none;margin:0;padding:0}
+.job{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:.5rem 2.5rem;padding:1.75rem 0;border-bottom:1px solid var(--line);scroll-margin-top:5rem}
+.job:first-child{padding-top:0}
+.job .dates{font-size:.92rem;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:.2rem}
+.job .dates span{display:block}
+.job h3{margin:0;font-size:1.2rem;font-weight:650}
+.job .org{margin:.15rem 0 .75rem;color:var(--muted)}
+.job h4{margin:1rem 0 .35rem;font-size:.98rem;font-weight:650}
+.job ul{margin:0;padding-left:1.15rem;max-width:68ch}
+.job li{margin:.3rem 0}
+.job li::marker{color:var(--blue)}
+@media (prefers-reduced-motion:no-preference){.job:target{animation:flash 1.6s ease-out}}
+@keyframes flash{from{background:color-mix(in srgb,var(--ochre) 18%,transparent)}to{background:transparent}}
+@media (max-width:640px){.job{grid-template-columns:1fr}.job .dates span{display:inline}.job .dates span+span::before{content:", "}}
+
+/* Compétences */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));gap:2rem 2.5rem}
+.skills h3{margin:0 0 .5rem;font-size:1rem;font-weight:650}
+.skills ul{list-style:none;margin:0;padding:0;color:var(--muted)}
+.skills li{padding:.15rem 0}
+
+/* Contact */
+.contact{padding:5rem 0 3rem;border-top:1px solid var(--line)}
+.contact h2{margin:0;font-stretch:120%;font-weight:750;font-size:clamp(1.9rem,4vw,2.6rem)}
+.contact .mail{display:inline-block;margin-top:1.25rem;font-size:clamp(1.3rem,4vw,2.2rem);font-weight:600;font-stretch:110%;word-break:break-word}
+.contact p{color:var(--muted);max-width:60ch}
+footer{padding:2rem 0 3rem;font-size:.88rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">G. Pilliat</a>
+    <nav aria-label="Navigation principale">
+      <a href="#missions">Ce que je fais</a>
+      <a href="#projets">Projets</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#competences">Compétences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <h1>Germain<br>Pilliat</h1>
+    <p class="role">Ingénieur d'études en bases de données, reporting et intégration SI</p>
+    <p class="lead">35 ans d'informatique, du Cobol aux LLM. Passé par la Marine nationale, diplômé ingénieur de l'UTBM après une reprise d'études, puis consultant en ESN (CGI, SQLI), je travaille depuis 2013 à la Direction du Numérique de l'Université de Haute-Alsace sur les flux de données, le reporting décisionnel et la fiabilité des référentiels métiers. Ouvert aux opportunités dans l'enseignement supérieur comme dans le privé.</p>
+    <div class="links">
+      <a class="btn primary" href="https://gpilliat.github.io/gpilliat/cv.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>
+        Voir le CV complet</a>
+      <a class="btn" href="https://github.com/gpilliat">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+        GitHub</a>
+      <a class="btn" href="mailto:gp.cv@posteo.ch">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        Me contacter</a>
+    </div>
+
+    <div class="frise">
+      <h2 id="frise-titre">Parcours de 1991 à aujourd'hui, cliquez sur une période</h2>
+      <div class="band" id="band" role="group" aria-labelledby="frise-titre"></div>
+      <div class="caption" id="caption" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <section class="block" id="missions">
+    <div class="wrap">
+      <h2>Ce que je fais</h2>
+      <div class="missions">
+        <div>
+          <h3>SQL et données</h3>
+          <p>Mon cœur de métier. Optimisation Oracle (PL/SQL, plans d'exécution, OCCI), conception de vues sur un parc de <strong>2 500 tables</strong> et <strong>50 Go</strong> de données transactionnelles. PostgreSQL et SQL Server également.</p>
+        </div>
+        <div>
+          <h3>Reporting et aide à la décision</h3>
+          <p>Univers Business Objects, rapports JasperReports et ReportServer. Cadrage des besoins avec les directions métiers, prototypage des indicateurs, accompagnement de <strong>200 utilisateurs</strong>.</p>
+        </div>
+        <div>
+          <h3>Référentiels et flux de l'enseignement supérieur</h3>
+          <p>Schémas Cocktail (GRHUM, Mangue, GFC), Apogée (<strong>630 tables</strong>, <strong>1 500 index</strong>) et ADE Campus. Synchronisations LDAP et anonymisation RGPD sous Talend.</p>
+        </div>
+        <div>
+          <h3>Reprise de systèmes hérités</h3>
+          <p>Fiabilisation d'applications C++, Java et d'un ETL propriétaire OCCI/Oracle. J'interviens sur des bases de code non documentées et j'en assure la continuité.</p>
+        </div>
+        <div>
+          <h3>Administration système</h3>
+          <p>Maintenance et durcissement de <strong>8 serveurs</strong> Linux de production (RHEL 8/9, Ubuntu). Apache, Tomcat, Nginx, Windows Server, IIS.</p>
+        </div>
+        <div>
+          <h3>IA générative</h3>
+          <p>Claude, Gemini et GPT au quotidien pour le code, l'analyse SQL et la rédaction technique. Sur mon temps personnel, j'expérimente des architectures RAG en local avec Ollama et Mistral.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="projets">
+    <div class="wrap">
+      <h2>Projets</h2>
+      <ul class="projects">
+        <li class="project featured">
+          <div>
+            <span class="badge">En production quotidienne</span>
+            <h3>ADESTATS, le pipeline des statistiques d'enseignement</h3>
+            <a class="repo" href="https://github.com/gpilliat/adestats-documentation">gpilliat/adestats-documentation</a>
+          </div>
+          <div>
+            <p>Extraction des emplois du temps, croisement avec les données de scolarité et de ressources humaines, puis alimentation des tableaux de bord de pilotage de l'université. Projet conduit seul, du cadrage sans documentation existante à la mise en production, avec 7 années d'historique consolidées.</p>
+            <p class="note">Un programme C++ multi-processus (fork, mémoire partagée) alimente une chaîne PL/SQL en 8 étapes. Les traitements passent par des tables de travail, si bien qu'une exécution interrompue ne touche jamais aux données de production.</p>
+            <ul class="stack"><li>C++ / OCCI</li><li>Oracle 19c</li><li>PL/SQL</li><li>Linux</li><li>cron</li></ul>
+          </div>
+        </li>
+        <li class="project">
+          <div>
+            <h3>Migration de rapports JasperReports vers ReportServer</h3>
+            <a class="repo" href="https://github.com/gpilliat/migration-jasper-or-vers-rs">gpilliat/migration-jasper-or-vers-rs</a>
+          </div>
+          <div>
+            <p>Retour d'expérience sur le remplacement d'OpenReport par ReportServer. Les états d'heures d'enseignement combinaient schémas Oracle dynamiques, cascade de paramètres sur 6 niveaux et multi-sélection.</p>
+            <p class="note">Les deux plateformes ne gèrent pas le cycle de vie des paramètres de la même façon : la logique métier a été déportée dans des fonctions Oracle pipelinées. Deux rapports validés en production.</p>
+            <ul class="stack"><li>JasperReports</li><li>ReportServer</li><li>JUEL</li><li>Oracle PL/SQL</li></ul>
+          </div>
+        </li>
+        <li class="project">
+          <div>
+            <h3>SEBINA, synchronisation des référentiels lecteurs</h3>
+            <a class="repo" href="https://github.com/gpilliat/sebina-sync">gpilliat/sebina-sync</a>
+          </div>
+          <div>
+            <p>Flux Talend qui consolident les données des personnels et des étudiants depuis Oracle et l'annuaire LDAP, vers une base PostgreSQL exposée au web service de la bibliothèque.</p>
+            <p class="note">Détection des changements par empreinte SHA-256, puis fusion, dédoublonnage et reconstruction complète de la table cible. En production depuis 8 ans sans intervention.</p>
+            <ul class="stack"><li>Talend 7.3</li><li>Java</li><li>Oracle 19c</li><li>PostgreSQL</li><li>OpenLDAP</li></ul>
+          </div>
+        </li>
+        <li class="project">
+          <div>
+            <h3>Recueil SQL et PL/SQL</h3>
+            <a class="repo" href="https://github.com/gpilliat/sql-oracle-cookbook">gpilliat/sql-oracle-cookbook</a>
+          </div>
+          <div>
+            <p>Requêtes issues de projets réels anonymisés : ressources humaines, finances, gestion des salles, gestion des accès. Chaque cas documente le contexte métier et les choix d'implémentation.</p>
+            <p class="note">Réécriture de vues avec un gain de plus de 40 secondes, index composites, fonctions avec RESULT_CACHE, dédoublonnage par fonctions analytiques, code structuré en CTE.</p>
+            <ul class="stack"><li>Oracle 19c</li><li>PostgreSQL 14+</li><li>SQL analytique</li><li>Tuning</li></ul>
+          </div>
+        </li>
+        <li class="project">
+          <div>
+            <h3>Runbooks d'administration Linux</h3>
+            <a class="repo" href="https://github.com/gpilliat/linux-admin-toolbox">gpilliat/linux-admin-toolbox</a>
+          </div>
+          <div>
+            <p>Procédures de production pour RHEL 8/9 : installation complète de LimeSurvey et de ReportServer, chaque commande testée et chaque choix justifié, pour qu'un collègue puisse tout reproduire sans aide.</p>
+            <p class="note">Déploiement versionné avec rollback instantané par lien symbolique, intégration LDAPS, audit de sécurité Lynis avec plan de remédiation priorisé.</p>
+            <ul class="stack"><li>RHEL 8/9</li><li>Apache</li><li>Tomcat</li><li>MariaDB</li><li>PostgreSQL</li><li>Lynis</li></ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="parcours">
+    <div class="wrap">
+      <h2>Parcours</h2>
+      <ol class="jobs" reversed>
+        <li class="job" id="uha">
+          <div class="dates"><span>Sept. 2013 – aujourd'hui</span><span>Mulhouse</span></div>
+          <div>
+            <h3>Ingénieur d'études, pôle Services métiers</h3>
+            <p class="org">Université de Haute-Alsace, Direction du Numérique</p>
+            <h4>Référent Cocktail et expertise Apogée</h4>
+            <ul>
+              <li>Référent fonctionnel Cocktail (GRHUM, Mangue, GFC) pendant 3 ans : maintenance applicative, montées de version, paramétrage, suivi des correctifs.</li>
+              <li>Conception de vues métier pour les directions utilisatrices (DRH, Finances, Marchés, Scolarité, Pilotage), du recueil du besoin au suivi dans la durée.</li>
+              <li>Expertise technique Apogée : requêtage pour la Scolarité sur un modèle de 630 tables et 1 500 index, alimentation des flux Talend.</li>
+            </ul>
+            <h4>Data et décisionnel</h4>
+            <ul>
+              <li>Projet ADESTATS conduit en autonomie complète, de la conception à la mise en production, avec 7 années d'historique multi-schémas.</li>
+              <li>Maintenance des univers Business Objects et requêtes pour la direction du Pilotage.</li>
+              <li>Vues SQL unifiant 5 domaines métiers sur environ 2 500 tables et 50 Go de données.</li>
+              <li>Deux jobs Talend en production depuis 8 ans sans intervention (synchro LDAP, flux Oracle, anonymisation SHA-256).</li>
+            </ul>
+            <h4>Exploitation et support</h4>
+            <ul>
+              <li>Administration de ReportServer : comptes LDAP, espaces collaboratifs, support aux utilisateurs.</li>
+              <li>Maintenance et durcissement de 8 serveurs Linux RHEL 8/9.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job" id="cgi">
+          <div class="dates"><span>Mars 2007 – mars 2011</span><span>Paris, Metz</span></div>
+          <div>
+            <h3>Ingénieur des technologies de l'information</h3>
+            <p class="org">CGI (ESN)</p>
+            <ul>
+              <li>Presstalis, 30 mois : maintenance évolutive et corrective d'un outil d'analyse des ventes en points presse.</li>
+              <li>Ministère de l'Intérieur, 12 mois : déploiement national de Chorus, formation et accompagnement des utilisateurs.</li>
+              <li>EDF, 3 mois : outils de contrôle proactif du parc de serveurs pour détecter les incidents en amont.</li>
+              <li>Air Liquide, 3 mois : sécurisation d'une application web.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job" id="sqli">
+          <div class="dates"><span>Déc. 2004 – déc. 2005</span><span>Strasbourg</span></div>
+          <div>
+            <h3>Ingénieur concepteur développeur</h3>
+            <p class="org">SQLI (ESN)</p>
+            <ul>
+              <li>Mission Wrigley France en autonomie complète : analyse, conception et développement d'agrégations comptables, procédures stockées T-SQL, recette technique.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job" id="chimie">
+          <div class="dates"><span>Janv. 2003 – déc. 2003</span><span>Mulhouse</span></div>
+          <div>
+            <h3>Technicien informatique</h3>
+            <p class="org">Université de Haute-Alsace, École de chimie</p>
+            <ul><li>Gestion du parc informatique et assistance aux utilisateurs.</li></ul>
+          </div>
+        </li>
+        <li class="job" id="utbm">
+          <div class="dates"><span>2000 – 2002</span><span>Belfort</span></div>
+          <div>
+            <h3>Reprise d'études, diplôme d'ingénieur en informatique</h3>
+            <p class="org">Université de Technologie de Belfort-Montbéliard (UTBM)</p>
+            <ul><li>Retour aux études après neuf ans d'expérience professionnelle, sanctionné par le diplôme d'ingénieur en 2002.</li></ul>
+          </div>
+        </li>
+        <li class="job" id="defense">
+          <div class="dates"><span>Sept. 1996 – sept. 2000</span><span>Compiègne</span></div>
+          <div>
+            <h3>Gestionnaire de parc informatique</h3>
+            <p class="org">Centre interarmées, ministère de la Défense</p>
+            <ul>
+              <li>Administration du parc informatique d'un centre de gestion des appelés, au sein d'une équipe de 8 personnes.</li>
+              <li>Formation des nouveaux arrivants aux procédures et aux outils d'exploitation.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job" id="marine">
+          <div class="dates"><span>Sept. 1991 – sept. 1996</span><span>Paris</span></div>
+          <div>
+            <h3>Analyste-programmeur</h3>
+            <p class="org">Marine nationale, Commissariat de la Marine</p>
+            <ul><li>Maintenance d'une application Cobol/GCOS7 de production d'indicateurs, au sein d'une équipe de 5.</li></ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="competences">
+    <div class="wrap">
+      <h2>Compétences</h2>
+      <div class="skills">
+        <div><h3>Bases de données</h3><ul><li>Oracle 19c (PL/SQL, OCCI)</li><li>PostgreSQL</li><li>Microsoft SQL Server</li></ul></div>
+        <div><h3>ETL et reporting</h3><ul><li>Talend</li><li>Business Objects XI R3</li><li>JasperReports, ReportServer</li></ul></div>
+        <div><h3>Langages</h3><ul><li>SQL, PL/SQL, T-SQL</li><li>Python, Java, C++</li><li>Bash, PowerShell</li><li>XML, XSLT</li></ul></div>
+        <div><h3>Systèmes</h3><ul><li>Linux (RHEL 8/9, Ubuntu)</li><li>Windows Server, IIS</li><li>Apache, Tomcat, Nginx</li><li>Git, GitHub</li></ul></div>
+        <div><h3>Outils de l'enseignement supérieur</h3><ul><li>Cocktail (GRHUM, Mangue, GFC)</li><li>Apogée</li><li>ADE Campus</li><li>LimeSurvey</li></ul></div>
+        <div><h3>IA générative</h3><ul><li>Claude, Gemini, GPT</li><li>Ollama, Mistral</li><li>RAG local, vectorisation</li></ul></div>
+        <div><h3>Formation</h3><ul><li>Ingénieur UTBM (2002), en reprise d'études</li><li>Talend, CSIESR Dawan (2016)</li><li>Business Objects, administration et designer (2015)</li></ul></div>
+        <div><h3>Langues</h3><ul><li>Français, langue maternelle</li><li>Anglais, C1 écrit, B1/B2 oral</li><li>Italien, A1</li><li>Arabe, notions</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <a class="mail" href="mailto:gp.cv@posteo.ch">gp.cv@posteo.ch</a>
+      <p>Basé à Mulhouse, en Alsace. En dehors du travail : photographie, écriture, course à pied et randonnée.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="year">2026</span> Germain Pilliat. Site hébergé sur GitHub Pages.</div>
+</footer>
+
+<script>
+(function(){
+  var chapters = [
+    {id:"marine", y:"1991 – 2000", t:"Défense", when:"1991 – 2000",
+     what:"Analyste-programmeur puis gestionnaire de parc, Marine nationale et ministère de la Défense",
+     tech:"Cobol, GCOS7, parc informatique, formation des utilisateurs"},
+    {id:"utbm", y:"2000 – 2002", t:"UTBM", when:"2000 – 2002",
+     what:"Reprise d'études, diplôme d'ingénieur en informatique à l'UTBM",
+     tech:"Université de Technologie de Belfort-Montbéliard"},
+    {id:"cgi", y:"2003 – 2011", t:"ESN", when:"2003 – 2011",
+     what:"Technicien à l'UHA, puis ingénieur chez SQLI et CGI",
+     tech:"T-SQL, missions pour Wrigley, Presstalis, EDF, Air Liquide et le ministère de l'Intérieur"},
+    {id:"uha", y:"2013 – auj.", t:"UHA", when:"2013 – aujourd'hui",
+     what:"Ingénieur d'études, Université de Haute-Alsace",
+     tech:"Oracle, PL/SQL, Talend, Business Objects, ReportServer, Linux, LLM"}
+  ];
+  var band = document.getElementById("band"), cap = document.getElementById("caption"), buttons = [];
+
+  function select(i){
+    buttons.forEach(function(b,j){ b.setAttribute("aria-pressed", i===j ? "true" : "false"); });
+    var c = chapters[i];
+    cap.innerHTML = '<div class="when"></div><div class="what"></div><div class="tech"></div>';
+    cap.querySelector(".when").textContent = c.when;
+    var a = document.createElement("a"); a.href = "#" + c.id; a.textContent = c.what;
+    cap.querySelector(".what").appendChild(a);
+    cap.querySelector(".tech").textContent = c.tech;
+  }
+
+  chapters.forEach(function(c,i){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "seg";
+    b.style.animationDelay = (i * 0.15) + "s";
+    b.setAttribute("aria-label", c.when + ", " + c.what);
+    b.innerHTML = '<span class="y"></span><span class="t"></span>';
+    b.querySelector(".y").textContent = c.y;
+    b.querySelector(".t").textContent = c.t;
+    b.addEventListener("click", function(){ select(i); });
+    band.appendChild(b); buttons.push(b);
+  });
+
+  select(chapters.length - 1);
+  document.getElementById("year").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
