@@ -41,7 +41,7 @@ a:hover{text-decoration-thickness:2px}
 
 /* En-tête */
 .hero{padding-top:4.5rem;padding-bottom:3rem}
-.hero h1{margin:0;font-stretch:125%;font-weight:800;font-size:clamp(3rem,10.5vw,7.5rem);line-height:.92;letter-spacing:-.02em}
+.hero h1{margin:0;font-stretch:120%;font-weight:800;font-size:clamp(2.2rem,5.5vw,3.75rem);line-height:1.05;letter-spacing:-.015em}
 .hero .role{margin:1.25rem 0 0;font-size:clamp(1.15rem,2.2vw,1.45rem);font-weight:500;font-stretch:105%;max-width:40ch}
 .hero .lead{margin:1.25rem 0 0;color:var(--muted);max-width:62ch}
 .links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
@@ -146,11 +146,11 @@ footer{padding:2rem 0 3rem;font-size:.88rem;color:var(--muted)}
 
 <main>
   <div class="wrap hero">
-    <h1>Germain<br>Pilliat</h1>
+    <h1>Germain Pilliat</h1>
     <p class="role">Ingénieur d'études en bases de données, reporting et intégration SI</p>
     <p class="lead">35 ans d'informatique, du Cobol aux LLM. Passé par la Marine nationale, diplômé ingénieur de l'UTBM après une reprise d'études, puis consultant en ESN (CGI, SQLI), je travaille depuis 2013 à la Direction du Numérique de l'Université de Haute-Alsace sur les flux de données, le reporting décisionnel et la fiabilité des référentiels métiers. Ouvert aux opportunités dans l'enseignement supérieur comme dans le privé.</p>
     <div class="links">
-      <a class="btn primary" href="https://gpilliat.github.io/gpilliat/cv.html">
+      <a class="btn primary" href="cv.html">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>
         Voir le CV complet</a>
       <a class="btn" href="https://github.com/gpilliat">
@@ -178,15 +178,19 @@ footer{padding:2rem 0 3rem;font-size:.88rem;color:var(--muted)}
         </div>
         <div>
           <h3>Reporting et aide à la décision</h3>
-          <p>Univers Business Objects, rapports JasperReports et ReportServer. Cadrage des besoins avec les directions métiers, prototypage des indicateurs, accompagnement de <strong>200 utilisateurs</strong>.</p>
+          <p>Univers Business Objects, rapports JasperReports et ReportServer. Cadrage des besoins avec les directions métiers, prototypage des indicateurs, accompagnement de <strong>200 utilisateurs</strong>. Indicateurs d'occupation sur <strong>466 salles</strong>.</p>
         </div>
         <div>
           <h3>Référentiels et flux de l'enseignement supérieur</h3>
-          <p>Schémas Cocktail (GRHUM, Mangue, GFC), Apogée (<strong>630 tables</strong>, <strong>1 500 index</strong>) et ADE Campus. Synchronisations LDAP et anonymisation RGPD sous Talend.</p>
+          <p>Connaissance des référentiels Cocktail (GRHUM, Mangue, GFC), Apogée (<strong>630 tables</strong>, <strong>1 500 index</strong>) et ADE Campus. Synchronisations LDAP et anonymisation RGPD sous Talend.</p>
+        </div>
+        <div>
+          <h3>Finances publiques</h3>
+          <p>Formateur Chorus au ministère de l'Intérieur, puis référent Cocktail GFC pendant <strong>3 ans</strong> à l'UHA : je connais les règles de la gestion budgétaire et comptable publique (GBCP) et la structure de ses données, que j'exploite aujourd'hui dans les vues de pilotage financier pour les Finances et les Marchés.</p>
         </div>
         <div>
           <h3>Reprise de systèmes hérités</h3>
-          <p>Fiabilisation d'applications C++, Java et d'un ETL propriétaire OCCI/Oracle. J'interviens sur des bases de code non documentées et j'en assure la continuité.</p>
+          <p>Fiabilisation d'applications C++, Java et d'un ETL propriétaire OCCI/Oracle. J'interviens sur des bases de code non documentées et j'en assure la continuité. Ma première migration date de la Marine nationale : passer une application du mainframe Bull à la micro-informatique, en équipe de 4.</p>
         </div>
         <div>
           <h3>Administration système</h3>
@@ -194,7 +198,7 @@ footer{padding:2rem 0 3rem;font-size:.88rem;color:var(--muted)}
         </div>
         <div>
           <h3>IA générative</h3>
-          <p>Claude, Gemini et GPT au quotidien pour le code, l'analyse SQL et la rédaction technique. Sur mon temps personnel, j'expérimente des architectures RAG en local avec Ollama et Mistral.</p>
+          <p>Claude Code et Gemini font partie de mes outils de travail : je les pilote pour écrire du code, analyser des requêtes SQL et rédiger de la documentation technique. Sur mon temps personnel, j'expérimente des architectures RAG en local avec Ollama et Mistral.</p>
         </div>
       </div>
     </div>
@@ -206,14 +210,14 @@ footer{padding:2rem 0 3rem;font-size:.88rem;color:var(--muted)}
       <ul class="projects">
         <li class="project featured">
           <div>
-            <span class="badge">En production quotidienne</span>
-            <h3>ADESTATS, le pipeline des statistiques d'enseignement</h3>
+            <span class="badge">Système critique en production</span>
+            <h3>ADESTATS, reprise d'un ETL critique sans documentation</h3>
             <a class="repo" href="https://github.com/gpilliat/adestats-documentation">gpilliat/adestats-documentation</a>
           </div>
           <div>
-            <p>Extraction des emplois du temps, croisement avec les données de scolarité et de ressources humaines, puis alimentation des tableaux de bord de pilotage de l'université. Projet conduit seul, du cadrage sans documentation existante à la mise en production, avec 7 années d'historique consolidées.</p>
-            <p class="note">Un programme C++ multi-processus (fork, mémoire partagée) alimente une chaîne PL/SQL en 8 étapes. Les traitements passent par des tables de travail, si bien qu'une exécution interrompue ne touche jamais aux données de production.</p>
-            <ul class="stack"><li>C++ / OCCI</li><li>Oracle 19c</li><li>PL/SQL</li><li>Linux</li><li>cron</li></ul>
+            <p>Ce pipeline extrait les emplois du temps, les croise avec la scolarité et les ressources humaines, et sert de base aux états de paiement des heures des enseignants et vacataires comme aux indicateurs de pilotage. Développé par un prédécesseur sans aucune documentation, je l'ai repris par rétro-ingénierie du code C++ et PL/SQL et j'en assure le maintien en conditions opérationnelles.</p>
+            <p class="note">Corrections de défauts hérités, dont un filtrage qui écartait jusqu'à 2 500 heures d'enseignement par an des indicateurs d'occupation des salles. Audits des états de service sur trois années universitaires, bascule annuelle des schémas Oracle, documentation complète du système.</p>
+            <ul class="stack"><li>C++ / OCCI</li><li>Oracle 19c</li><li>PL/SQL</li><li>Data Pump</li><li>Linux</li></ul>
           </div>
         </li>
         <li class="project">
@@ -273,23 +277,27 @@ footer{padding:2rem 0 3rem;font-size:.88rem;color:var(--muted)}
           <div>
             <h3>Ingénieur d'études, pôle Services métiers</h3>
             <p class="org">Université de Haute-Alsace, Direction du Numérique</p>
-            <h4>Référent Cocktail et expertise Apogée</h4>
+            <h4>Pilotage et décisionnel</h4>
             <ul>
-              <li>Référent fonctionnel Cocktail (GRHUM, Mangue, GFC) pendant 3 ans : maintenance applicative, montées de version, paramétrage, suivi des correctifs.</li>
-              <li>Conception de vues métier pour les directions utilisatrices (DRH, Finances, Marchés, Scolarité, Pilotage), du recueil du besoin au suivi dans la durée.</li>
-              <li>Expertise technique Apogée : requêtage pour la Scolarité sur un modèle de 630 tables et 1 500 index, alimentation des flux Talend.</li>
+              <li>Extractions pour la direction du Pilotage croisant trois systèmes (emplois du temps, scolarité, RH) : taux d'occupation des salles, ventilation des heures d'enseignement par formation et par type, y compris pour les cours mutualisés.</li>
+              <li>Gestion du référentiel des salles (466 salles, 9 composantes) qui rapproche le patrimoine immobilier des emplois du temps et sert au calcul des taux d'occupation.</li>
+              <li>Vues SQL unifiant 5 domaines métiers sur environ 2 500 tables et 50 Go de données. Maintenance des univers Business Objects.</li>
             </ul>
-            <h4>Data et décisionnel</h4>
+            <h4>Reprise d'un ETL critique</h4>
             <ul>
-              <li>Projet ADESTATS conduit en autonomie complète, de la conception à la mise en production, avec 7 années d'historique multi-schémas.</li>
-              <li>Maintenance des univers Business Objects et requêtes pour la direction du Pilotage.</li>
-              <li>Vues SQL unifiant 5 domaines métiers sur environ 2 500 tables et 50 Go de données.</li>
-              <li>Deux jobs Talend en production depuis 8 ans sans intervention (synchro LDAP, flux Oracle, anonymisation SHA-256).</li>
+              <li>Reprise et maintien en conditions opérationnelles d'ADESTATS, ETL non documenté (C++/OCCI, PL/SQL) qui sert de base aux états de paiement des heures des enseignants et vacataires.</li>
+              <li>Correction de défauts hérités, dont un filtrage qui écartait jusqu'à 2 500 heures d'enseignement par an des indicateurs d'occupation.</li>
+              <li>Audits des états de service démontrés sur trois années universitaires, bascule annuelle des schémas Oracle.</li>
             </ul>
-            <h4>Exploitation et support</h4>
+            <h4>Flux, exploitation et référentiels</h4>
             <ul>
-              <li>Administration de ReportServer : comptes LDAP, espaces collaboratifs, support aux utilisateurs.</li>
+              <li>Deux jobs Talend en production depuis 8 ans sans intervention (synchro LDAP, flux Oracle, anonymisation SHA-256), maintenus aujourd'hui sous Talaxie.</li>
+              <li>Développement d'une application Java (Swing, Apache POI, JavaMail) pour la Scolarité centrale : envoi personnalisé des e-mails aux étudiants admis à partir de fichiers Excel, avec contrôle de la qualité des données (civilités, champs vides, adresses invalides, doublons). En service pendant 2 ans.</li>
+              <li>Scripts Python d'automatisation, dont la synchronisation des comptes LimeSurvey avec l'annuaire LDAP.</li>
+              <li>Administration de ReportServer et migration des rapports JasperReports depuis OpenReport.</li>
+              <li>Référent de l'application EvRP (gestion des risques) : mises à jour, serveur IIS et base PostgreSQL, en lien avec l'AMUE.</li>
               <li>Maintenance et durcissement de 8 serveurs Linux RHEL 8/9.</li>
+              <li>Référent fonctionnel Cocktail (GRHUM, Mangue, GFC) pendant 3 ans, requêtes Apogée pour la Scolarité (630 tables, 1 500 index).</li>
             </ul>
           </div>
         </li>
@@ -300,7 +308,7 @@ footer{padding:2rem 0 3rem;font-size:.88rem;color:var(--muted)}
             <p class="org">CGI (ESN)</p>
             <ul>
               <li>Presstalis, 30 mois : maintenance évolutive et corrective d'un outil d'analyse des ventes en points presse.</li>
-              <li>Ministère de l'Intérieur, 12 mois : déploiement national de Chorus, formation et accompagnement des utilisateurs.</li>
+              <li>Ministère de l'Intérieur à Metz, 12 mois : formé à la comptabilité publique et à Chorus à Paris en 2009, puis formateur et accompagnateur des utilisateurs lors du déploiement national, dès la mise en service d'un outil réputé complexe.</li>
               <li>EDF, 3 mois : outils de contrôle proactif du parc de serveurs pour détecter les incidents en amont.</li>
               <li>Air Liquide, 3 mois : sécurisation d'une application web.</li>
             </ul>
@@ -329,7 +337,7 @@ footer{padding:2rem 0 3rem;font-size:.88rem;color:var(--muted)}
           <div>
             <h3>Reprise d'études, diplôme d'ingénieur en informatique</h3>
             <p class="org">Université de Technologie de Belfort-Montbéliard (UTBM)</p>
-            <ul><li>Retour aux études après neuf ans d'expérience professionnelle, sanctionné par le diplôme d'ingénieur en 2002.</li></ul>
+            <ul><li>Après un BTS informatique de gestion obtenu en 1999 et une mise à niveau à l'UTC de Compiègne au premier semestre 2000, en parallèle de mon poste à la Défense, retour aux études après neuf ans d'expérience professionnelle, sanctionné par le diplôme d'ingénieur en 2002.</li></ul>
           </div>
         </li>
         <li class="job" id="defense">
@@ -340,6 +348,7 @@ footer{padding:2rem 0 3rem;font-size:.88rem;color:var(--muted)}
             <ul>
               <li>Administration du parc informatique d'un centre de gestion des appelés, au sein d'une équipe de 8 personnes.</li>
               <li>Formation des nouveaux arrivants aux procédures et aux outils d'exploitation.</li>
+              <li>Formations internes aux réseaux Bull GCOS7, Novell et Windows NT dès mon affectation en 1996.</li>
             </ul>
           </div>
         </li>
@@ -348,7 +357,11 @@ footer{padding:2rem 0 3rem;font-size:.88rem;color:var(--muted)}
           <div>
             <h3>Analyste-programmeur</h3>
             <p class="org">Marine nationale, Commissariat de la Marine</p>
-            <ul><li>Maintenance d'une application Cobol/GCOS7 de production d'indicateurs, au sein d'une équipe de 5.</li></ul>
+            <ul>
+              <li>Formation de spécialité d'analyste-programmeur de 6 mois en 1991, en Cobol et en C, avant l'affectation en service opérationnel.</li>
+              <li>Migration en équipe de 4, en un an, d'une application de production d'indicateurs du mainframe Bull GCOS7 (Cobol) vers la micro-informatique (Clipper, C++).</li>
+              <li>Maintenance et évolutions de la nouvelle application en autonomie pendant 3 ans.</li>
+            </ul>
           </div>
         </li>
       </ol>
@@ -359,13 +372,14 @@ footer{padding:2rem 0 3rem;font-size:.88rem;color:var(--muted)}
     <div class="wrap">
       <h2>Compétences</h2>
       <div class="skills">
+        <div><h3>Domaines métier</h3><ul><li>Finances publiques (GBCP) : Chorus, Cocktail GFC</li><li>Ressources humaines</li><li>Scolarité et offre de formation</li></ul></div>
         <div><h3>Bases de données</h3><ul><li>Oracle 19c (PL/SQL, OCCI)</li><li>PostgreSQL</li><li>Microsoft SQL Server</li></ul></div>
-        <div><h3>ETL et reporting</h3><ul><li>Talend</li><li>Business Objects XI R3</li><li>JasperReports, ReportServer</li></ul></div>
-        <div><h3>Langages</h3><ul><li>SQL, PL/SQL, T-SQL</li><li>Python, Java, C++</li><li>Bash, PowerShell</li><li>XML, XSLT</li></ul></div>
+        <div><h3>ETL et reporting</h3><ul><li>Talend, Talaxie</li><li>SAP BusinessObjects</li><li>JasperReports, ReportServer</li></ul></div>
+        <div><h3>Langages</h3><ul><li>SQL, PL/SQL, T-SQL</li><li>Python (scripts d'automatisation)</li><li>Java, C++</li><li>Bash, PowerShell</li><li>HTML, CSS, JavaScript</li><li>XML, XSLT</li></ul></div>
         <div><h3>Systèmes</h3><ul><li>Linux (RHEL 8/9, Ubuntu)</li><li>Windows Server, IIS</li><li>Apache, Tomcat, Nginx</li><li>Git, GitHub</li></ul></div>
-        <div><h3>Outils de l'enseignement supérieur</h3><ul><li>Cocktail (GRHUM, Mangue, GFC)</li><li>Apogée</li><li>ADE Campus</li><li>LimeSurvey</li></ul></div>
-        <div><h3>IA générative</h3><ul><li>Claude, Gemini, GPT</li><li>Ollama, Mistral</li><li>RAG local, vectorisation</li></ul></div>
-        <div><h3>Formation</h3><ul><li>Ingénieur UTBM (2002), en reprise d'études</li><li>Talend, CSIESR Dawan (2016)</li><li>Business Objects, administration et designer (2015)</li></ul></div>
+        <div><h3>Outils de l'enseignement supérieur</h3><ul><li>Cocktail (GRHUM, Mangue, GFC)</li><li>Apogée</li><li>ADE Campus</li><li>EvRP (gestion des risques), référent</li><li>LimeSurvey</li></ul></div>
+        <div><h3>IA générative</h3><ul><li>Claude Code, Claude, Gemini</li><li>Ollama, Mistral</li><li>RAG local, vectorisation</li></ul></div>
+        <div><h3>Formation</h3><ul><li>Ingénieur UTBM (2002), en reprise d'études</li><li>Mise à niveau, UTC Compiègne (1er semestre 2000)</li><li>BTS informatique de gestion (1999)</li><li>Analyste-programmeur, Marine nationale, Cobol et C (6 mois, 1991)</li><li>Talend, CSIESR Dawan (2016)</li><li>Business Objects, administration et designer (2015)</li><li>Comptabilité publique et Chorus, ministère de l'Intérieur (2009)</li><li>Réseaux Bull GCOS7, Novell, Windows NT, Défense (1996)</li></ul></div>
         <div><h3>Langues</h3><ul><li>Français, langue maternelle</li><li>Anglais, C1 écrit, B1/B2 oral</li><li>Italien, A1</li><li>Arabe, notions</li></ul></div>
       </div>
     </div>
@@ -389,16 +403,16 @@ footer{padding:2rem 0 3rem;font-size:.88rem;color:var(--muted)}
   var chapters = [
     {id:"marine", y:"1991 – 2000", t:"Défense", when:"1991 – 2000",
      what:"Analyste-programmeur puis gestionnaire de parc, Marine nationale et ministère de la Défense",
-     tech:"Cobol, GCOS7, parc informatique, formation des utilisateurs"},
+     tech:"Migration Cobol/GCOS7 vers Clipper/C++, réseaux Novell et Windows NT, formation des utilisateurs"},
     {id:"utbm", y:"2000 – 2002", t:"UTBM", when:"2000 – 2002",
      what:"Reprise d'études, diplôme d'ingénieur en informatique à l'UTBM",
-     tech:"Université de Technologie de Belfort-Montbéliard"},
+     tech:"Après un BTS informatique de gestion (1999) et une mise à niveau à l'UTC de Compiègne en 2000"},
     {id:"cgi", y:"2003 – 2011", t:"ESN", when:"2003 – 2011",
      what:"Technicien à l'UHA, puis ingénieur chez SQLI et CGI",
-     tech:"T-SQL, missions pour Wrigley, Presstalis, EDF, Air Liquide et le ministère de l'Intérieur"},
+     tech:"T-SQL, formateur Chorus au ministère de l'Intérieur, missions pour Wrigley, Presstalis, EDF et Air Liquide"},
     {id:"uha", y:"2013 – auj.", t:"UHA", when:"2013 – aujourd'hui",
      what:"Ingénieur d'études, Université de Haute-Alsace",
-     tech:"Oracle, PL/SQL, Talend, Business Objects, ReportServer, Linux, LLM"}
+     tech:"Oracle, PL/SQL, Talend, Business Objects, ReportServer, Linux, Claude Code"}
   ];
   var band = document.getElementById("band"), cap = document.getElementById("caption"), buttons = [];
 

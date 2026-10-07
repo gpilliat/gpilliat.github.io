@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Germain Pilliat</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --blue: #2E75B6;
+    --light-blue: #A0B0C0;
+    --text: #2D2D2D;
+    --text-light: #555555;
+    --bg-accent: #F2F6FA;
+    --white: #FFFFFF;
+    --sidebar-w: 220px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  body {
+    font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+    font-size: 10.5px;
+    line-height: 1.4;
+    color: var(--text);
+    background: #e8e8e8;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 20px auto;
+    background: var(--white);
+    box-shadow: 0 2px 20px rgba(0,0,0,.12);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: var(--sidebar-w) 1fr;
+    overflow: hidden;
+  }
+
+  @media print {
+    body { background: none; }
+    .page { margin: 0; box-shadow: none; width: 100%; min-height: 100vh; }
+    .download-btn { display: none !important; }
+  }
+
+  .download-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: var(--navy);
+    color: var(--white);
+    border: 2px solid var(--blue);
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+    z-index: 9999;
+  }
+
+  .header {
+    grid-column: 1 / -1;
+    background: var(--navy);
+    padding: 20px 32px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+  }
+  .header .subtitle {
+    font-size: 13px;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+  .header .contact {
+    font-size: 10px;
+    color: var(--light-blue);
+  }
+  .header .contact a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .header .contact a:hover {
+    text-decoration: underline;
+  }
+
+  aside.sidebar {
+    background: var(--navy);
+    padding: 20px 15px;
+    color: var(--white);
+  }
+  .sidebar .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--blue);
+    text-transform: uppercase;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(46, 117, 182, 0.3);
+    padding-bottom: 2px;
+  }
+  .sidebar .entry-title { font-weight: 700; font-size: 10px; }
+  .sidebar .entry-sub { font-size: 9px; color: var(--light-blue); margin-bottom: 6px; }
+  .sidebar .skill-item { font-size: 10px; padding: 1.5px 0; }
+
+  main.main {
+    padding: 20px 30px;
+  }
+
+  .accroche {
+    background: var(--bg-accent);
+    padding: 12px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--blue);
+    font-size: 10.5px;
+  }
+
+  .section-heading {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    border-bottom: 2px solid var(--blue);
+    padding-bottom: 3px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .job { margin-bottom: 12px; }
+  .job-header { display: flex; justify-content: space-between; align-items: flex-start; }
+  .job-title { font-size: 11.5px; font-weight: 700; color: var(--navy); }
+  .job-meta { font-size: 9.5px; color: var(--text-light); }
+  .job-company { font-size: 10.5px; font-weight: 600; color: var(--blue); margin: 2px 0; }
+  .sub-section { font-size: 10.5px; font-weight: 700; color: var(--text); margin-top: 6px; margin-bottom: 2px; }
+
+  .job ul { list-style: none; margin-top: 4px; }
+  .job ul li {
+    padding-left: 12px;
+    position: relative;
+    margin-bottom: 2px;
+  }
+  .job ul li::before {
+    content: "•";
+    color: var(--blue);
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+  }
+
+  .competence-line { margin-bottom: 6px; line-height: 1.4; }
+  .competence-line strong { color: var(--blue); }
+
+@media screen and (max-width: 768px) {
+    :root {
+      --sidebar-w: 35%;
+    }
+
+    .page {
+      width: 100%;
+      min-height: auto;
+      margin: 0;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      font-size: 8.5px;
+    }
+
+    .header h1 { font-size: 18px; }
+    .header .subtitle { font-size: 10px; }
+    .header .contact { font-size: 8px; }
+    .header { padding: 15px 10px; }
+
+    aside.sidebar { padding: 10px 8px; }
+    .sidebar .section-title { font-size: 9px; margin-top: 10px; }
+    .sidebar .entry-title { font-size: 8.5px; }
+    .sidebar .entry-sub { font-size: 7.5px; }
+    .sidebar .skill-item { font-size: 8.5px; }
+
+    main.main { padding: 10px 12px; }
+    .accroche { font-size: 8.5px; padding: 8px; }
+    .section-heading { font-size: 10px; }
+    .job-title { font-size: 9.5px; }
+    .job-meta { font-size: 8px; }
+    .job-company { font-size: 9px; }
+    .sub-section { font-size: 9px; }
+    .job ul li { font-size: 8.5px; }
+    .competence-line { font-size: 8.5px; }
+
+    .job-header { flex-direction: column; }
+
+    .download-btn {
+      top: 10px;
+      left: 10px;
+      font-size: 11px;
+      padding: 8px 14px;
+      position: fixed !important;
+      transform: translateZ(0);
+    }
+}
+</style>
+</head>
+<body>
+
+<button class="download-btn" onclick="window.print()">Exporter en PDF</button>
+
+<div class="page">
+  <header class="header">
+    <h1>GERMAIN PILLIAT</h1>
+    <div class="subtitle">Ingénieur d'Études — Interface SI &amp; data dans l'ESR</div>
+    <div class="contact">
+      germain.pilliat@uha.fr &nbsp;•&nbsp; Mulhouse, Alsace &nbsp;•&nbsp; <a href="https://github.com/gpilliat">github.com/gpilliat</a>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <div class="section-title">Formation</div>
+    <div class="entry-title">Diplôme d'Ingénieur</div>
+    <div class="entry-sub">Informatique — UTBM (2002)</div>
+    <div class="entry-title">Mise à niveau</div>
+    <div class="entry-sub">UTC Compiègne (1er semestre 2000)</div>
+    <div class="entry-title">BTS Informatique de gestion</div>
+    <div class="entry-sub">1999</div>
+    <div class="entry-title">Analyste-programmeur</div>
+    <div class="entry-sub">Marine Nationale, Cobol &amp; C (6 mois, 1991)</div>
+    <div class="entry-title">Formation Talend</div>
+    <div class="entry-sub">CSIESR Dawan (2016)</div>
+    <div class="entry-title">Business Objects</div>
+    <div class="entry-sub">Admin, Sécurité &amp; Designer (2015)</div>
+    <div class="entry-title">Comptabilité publique &amp; Chorus</div>
+    <div class="entry-sub">Ministère de l'Intérieur, Paris (2 semaines, 2009)</div>
+    <div class="entry-title">Réseaux</div>
+    <div class="entry-sub">Bull GCOS7, Novell, Windows NT — Défense (1996)</div>
+
+    <div class="section-title">Langues</div>
+    <div class="skill-item">Français — Maternel</div>
+    <div class="skill-item">Anglais — C1 écrit (test UHA), B1/B2 oral</div>
+    <div class="skill-item">Italien — A1</div>
+    <div class="skill-item">Arabe — Notions (écrit, débutant)</div>
+
+    <div class="section-title">Outils Métier UHA</div>
+    <div class="skill-item">Cocktail (GRHUM, Mangue, GFC) — ancien référent</div>
+    <div class="skill-item">Apogée — connaissance du référentiel</div>
+    <div class="skill-item">ADE Campus — ponctuel</div>
+    <div class="skill-item">LimeSurvey</div>
+    <div class="skill-item">EvRP (gestion des risques) — référent</div>
+
+    <div class="section-title">SGBD</div>
+    <div class="skill-item">Oracle 19c (PL/SQL, OCCI)</div>
+    <div class="skill-item">PostgreSQL</div>
+    <div class="skill-item">Microsoft SQL Server</div>
+
+    <div class="section-title">ETL / Reporting</div>
+    <div class="skill-item">Talend / Talaxie</div>
+    <div class="skill-item">Business Objects XI R3</div>
+    <div class="skill-item">JasperReports / Report Server</div>
+
+    <div class="section-title">Langages</div>
+    <div class="skill-item">SQL / PL/SQL / T-SQL</div>
+    <div class="skill-item">Python (scripts d'automatisation)</div>
+    <div class="skill-item">Java (Swing, Apache POI, JavaMail)</div>
+    <div class="skill-item">Bash / PowerShell</div>
+    <div class="skill-item">HTML / CSS / JavaScript</div>
+    <div class="skill-item">XML / XSLT</div>
+
+    <div class="section-title">Systèmes &amp; Outils</div>
+    <div class="skill-item">Linux (RHEL 8/9, Ubuntu)</div>
+    <div class="skill-item">Windows Server / IIS</div>
+    <div class="skill-item">Apache / Tomcat / Nginx</div>
+    <div class="skill-item">Git / GitHub</div>
+
+    <div class="section-title">IA Générative</div>
+    <div class="skill-item">Claude Code, Claude, Gemini</div>
+    <div class="skill-item">Ollama, Mistral</div>
+    <div class="skill-item">RAG local, Vectorisation</div>
+
+    <div class="section-title">Centres d'intérêt</div>
+    <div class="skill-item">Photographie • Écriture</div>
+    <div class="skill-item">Running • Randonnée</div>
+  </aside>
+
+  <main class="main">
+    <div class="accroche">
+      <strong>35 ans d'informatique, du Cobol aux LLM.</strong> 13 ans à l'Université de Haute-Alsace, au sein de la Direction du Numérique, en interface avec les directions fonctionnelles (DRH, Finances, Scolarité, Pilotage). Double compétence technique et métier (finances publiques, RH, scolarité) et expérience des environnements critiques (Défense, Industrie).
+    </div>
+
+    <div class="section-heading">Expériences professionnelles</div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Ingénieur d'Études — Pôle Services Métiers</span>
+        <span class="job-meta">Sept. 2013 — Aujourd'hui | Mulhouse</span>
+      </div>
+      <div class="job-company">Université de Haute-Alsace — Direction du Numérique</div>
+
+      <div class="sub-section">Pilotage &amp; décisionnel</div>
+      <ul>
+        <li>Extractions pour la direction du Pilotage croisant trois systèmes hétérogènes (emplois du temps, scolarité, RH) : taux d'occupation des salles, ventilation des heures d'enseignement par formation et par type (CM, TD, TP), y compris pour les cours mutualisés.</li>
+        <li>Gestion du référentiel des salles (466 salles, 9 composantes) rapprochant le patrimoine immobilier (ABYLA) et les emplois du temps : capacités, surfaces, types, base du calcul des taux d'occupation.</li>
+        <li>Vues SQL unifiant 5 domaines métiers (RH, Finances, Marchés, Scolarité, Pilotage) sur ~2 500 tables et 50 Go de données transactionnelles. Maintenance des univers Business Objects.</li>
+      </ul>
+
+      <div class="sub-section">Reprise d'un ETL critique (ADESTATS)</div>
+      <ul>
+        <li>Reprise et maintien en conditions opérationnelles d'un ETL critique non documenté (C++/OCCI, PL/SQL Oracle), base des états de paiement des heures des enseignants et vacataires : diagnostic et correction des anomalies, rétro-documentation complète du système.</li>
+        <li>Correction de défauts hérités, dont un filtrage qui écartait jusqu'à 2 500 heures d'enseignement par an des indicateurs d'occupation des salles.</li>
+        <li>Audits des états de service à la demande des gestionnaires, démontrés par croisement des bases sur trois années universitaires. Bascule annuelle des schémas Oracle (Data Pump).</li>
+      </ul>
+
+      <div class="sub-section">Flux, exploitation &amp; référentiels</div>
+      <ul>
+        <li>2 jobs Talend en production depuis 8 ans sans intervention (synchro LDAP, flux Oracle, anonymisation SHA-256), maintenus aujourd'hui sous Talaxie.</li>
+        <li>Développement d'une application Java (Swing, Apache POI, JavaMail) pour la Scolarité centrale : envoi personnalisé des e-mails aux étudiants admis à partir de fichiers Excel, avec contrôle de la qualité des données (civilités, champs vides, adresses invalides, doublons). En service pendant 2 ans.</li>
+        <li>Scripts Python d'automatisation, dont la synchronisation des comptes LimeSurvey avec l'annuaire LDAP.</li>
+        <li>Administration de ReportServer (comptes LDAP, espaces collaboratifs, support) et migration des rapports JasperReports depuis OpenReport.</li>
+        <li>Référent de l'application EvRP (gestion des risques) : mises à jour, serveur IIS et base PostgreSQL, en lien avec l'AMUE.</li>
+        <li>Maintenance et durcissement de 8 serveurs Linux RHEL 8/9 (Dev &amp; Prod).</li>
+        <li>Référent fonctionnel Cocktail (GRHUM, Mangue, GFC) pendant 3 ans. Requêtes Apogée pour la Scolarité (630 tables, 1 500 index).</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Ingénieur des Technologies de l'Information</span>
+        <span class="job-meta">Mars 2007 — Mars 2011 | Paris / Metz</span>
+      </div>
+      <div class="job-company">CGI inc. (ESN)</div>
+      <ul>
+        <li>Presstalis (30 mois, régie) : maintenance évolutive et corrective d'un outil d'analyse des flux de vente en points presse.</li>
+        <li>Ministère de l'Intérieur — Metz (12 mois) : formateur Chorus après 2 semaines de formation à Paris en 2009 (comptabilité publique et Chorus). Formation et accompagnement des utilisateurs lors du déploiement national, dès la mise en service de l'outil.</li>
+        <li>EDF (3 mois, autonomie complète) : outils de contrôles proactifs du parc de serveurs, détection anticipée d'incidents.</li>
+        <li>Air Liquide (3 mois, autonomie complète) : sécurisation d'une application Web.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Ingénieur Concepteur Développeur</span>
+        <span class="job-meta">Déc. 2004 — Déc. 2005 | Strasbourg</span>
+      </div>
+      <div class="job-company">SQLI (ESN)</div>
+      <ul>
+        <li>Mission Wrigley France en autonomie complète (12 mois) : analyse, conception et développement de fonctions d'agrégations comptables, procédures stockées T-SQL, recette technique.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Technicien Informatique</span>
+        <span class="job-meta">Janv. 2003 — Déc. 2003 | Mulhouse</span>
+      </div>
+      <div class="job-company">UHA — École de Chimie</div>
+      <ul>
+        <li>Gestion du parc informatique et assistance utilisateurs.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Gestionnaire de parc informatique</span>
+        <span class="job-meta">Sept. 1996 — Sept. 2000 | Compiègne</span>
+      </div>
+      <div class="job-company">Centre interarmées — Ministère de la Défense</div>
+      <ul>
+        <li>Administration du parc informatique d'un centre de gestion des appelés (équipe de 8 personnes).</li>
+        <li>Accompagnement et formation des nouveaux arrivants aux procédures et aux outils d'exploitation.</li>
+        <li>Formations internes réseaux dès l'affectation en 1996 : Bull GCOS7, Novell, Windows NT.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Analyste-Programmeur</span>
+        <span class="job-meta">Sept. 1991 — Sept. 1996 | Paris</span>
+      </div>
+      <div class="job-company">Marine Nationale — Commissariat de la Marine</div>
+      <ul>
+        <li>Formation de spécialité d'analyste-programmeur (6 mois, 1991) en Cobol et C, avant l'affectation en service opérationnel.</li>
+        <li>Migration en équipe de 4, en un an, d'une application de production d'indicateurs organiques du mainframe Bull GCOS7 (Cobol) vers la micro-informatique (Clipper, C++).</li>
+        <li>Maintenance et évolutions de la nouvelle application en autonomie pendant 3 ans.</li>
+      </ul>
+    </div>
+
+    <div class="section-heading">Synthèse des compétences</div>
+    <div class="competence-line"><strong>Données et aide à la décision — </strong>Tuning Oracle, vues multi-schémas, requêtes sur modèles fortement indexés (Apogée : index 2× plus volumineux que les données). Talend, BO, JasperReports.</div>
+    <div class="competence-line"><strong>Finances publiques (GBCP) — </strong>Formateur Chorus au ministère de l'Intérieur, référent Cocktail GFC pendant 3 ans, vues de pilotage financier pour les Finances et les Marchés.</div>
+    <div class="competence-line"><strong>Ressources humaines — </strong>Référentiels de personnels, vues RH, croisements RH pour les états de service des enseignants.</div>
+    <div class="competence-line"><strong>Scolarité &amp; offre de formation — </strong>Référentiel Apogée, ventilation des heures d'enseignement par formation, référentiel des salles. ADE Campus, LDAP, anonymisation RGPD.</div>
+    <div class="competence-line"><strong>Systèmes hérités — </strong>Migration et reprise : Cobol/GCOS7 vers Clipper/C++, OpenReport vers ReportServer, Java, C++, DBase, ETL propriétaire OCCI.</div>
+    <div class="competence-line"><strong>IA Générative — </strong>Claude Code et Gemini comme outils de travail, pilotés au quotidien : code, analyse SQL, documentation technique. Veille personnelle : RAG local (Ollama, Mistral).</div>
+    <div class="competence-line"><strong>Interface métier / SI — </strong>Cadrage des besoins avec les directions fonctionnelles, conduite de projets en autonomie, support utilisateurs.</div>
+  </main>
+</div>
+
+</body>
+</html>
