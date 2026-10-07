@@ -50,6 +50,11 @@ a:hover{text-decoration-thickness:2px}
 .btn:hover{background:var(--blue);border-color:var(--blue);color:#fff}
 .btn svg{width:1.1em;height:1.1em;flex:none}
 
+/* Statut de recherche */
+.status{display:inline-flex;align-items:center;gap:.55rem;margin-bottom:1.5rem;padding:.4rem .9rem;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--ink);font-size:.9rem;font-weight:600;text-decoration:none}
+.status:hover{border-color:var(--ochre)}
+.status .dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--ochre);box-shadow:0 0 0 3px color-mix(in srgb,var(--ochre) 25%,transparent)}
+
 /* Frise 1991 – aujourd'hui */
 .frise{margin-top:4rem}
 .frise h2{font-size:1.05rem;font-weight:600;font-stretch:100%;margin:0 0 1rem;color:var(--muted)}
@@ -146,9 +151,10 @@ footer{padding:2rem 0 3rem;font-size:.88rem;color:var(--muted)}
 
 <main>
   <div class="wrap hero">
+    <a class="status" href="#contact"><span class="dot" aria-hidden="true"></span>En recherche active, disponible selon préavis</a>
     <h1>Germain Pilliat</h1>
     <p class="role">Ingénieur d'études en bases de données, reporting et intégration SI</p>
-    <p class="lead">35 ans d'informatique, du Cobol aux LLM. Passé par la Marine nationale, diplômé ingénieur de l'UTBM après une reprise d'études, puis consultant en ESN (CGI, SQLI), je travaille depuis 2013 à la Direction du Numérique de l'Université de Haute-Alsace sur les flux de données, le reporting décisionnel et la fiabilité des référentiels métiers. Ouvert aux opportunités dans l'enseignement supérieur comme dans le privé.</p>
+    <p class="lead">35 ans d'informatique, du Cobol aux LLM. Passé par la Marine nationale, diplômé ingénieur de l'UTBM après une reprise d'études, puis consultant en ESN (CGI, SQLI), je travaille depuis 2013 à la Direction du Numérique de l'Université de Haute-Alsace sur les flux de données, le reporting décisionnel et la fiabilité des référentiels métiers. Toujours en poste, je cherche activement de nouvelles responsabilités en données et décisionnel, dans l'enseignement supérieur comme dans le privé, à Mulhouse, à Bâle ou en télétravail.</p>
     <div class="links">
       <a class="btn primary" href="cv.html">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>
