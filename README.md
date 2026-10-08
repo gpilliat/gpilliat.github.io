@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Germain Pilliat</h1>
   <p><strong>Ingénieur d'études · Bases de données, pilotage & intégration SI</strong></p>
-  <p>Du Cobol aux LLM : je fiabilise des flux de données critiques et je les transforme en indicateurs pour les directions.</p>
+  <p>Je fiabilise des flux de données critiques et je les transforme en indicateurs pour les directions.<br><em>Du Cobol aux LLM : depuis 35 ans, je fais évoluer des systèmes d'information sans interrompre le service.</em></p>
   <p>🟢 <strong>Ouvert à une mobilité dans la fonction publique</strong></p>
   <p>🌐 <a href="https://gpilliat.github.io"><strong>gpilliat.github.io</strong></a> · 📄 <a href="https://gpilliat.github.io/cv.html">CV complet</a> · 💼 <a href="https://www.linkedin.com/in/gpilliat">LinkedIn</a></p>
 </div>
