@@ -2,15 +2,15 @@
   <h1>Germain Pilliat</h1>
   <p><strong>Ingénieur d'études · Bases de données, pilotage & intégration SI</strong></p>
   <p>Du Cobol aux LLM : je fiabilise des flux de données critiques et je les transforme en indicateurs pour les directions.</p>
-  <p>🟢 <strong>À l'écoute d'opportunités dans le service public</strong></p>
-  <p>🌐 <a href="https://gpilliat.github.io"><strong>gpilliat.github.io</strong></a> · 📄 <a href="https://gpilliat.github.io/cv.html">CV complet</a></p>
+  <p>🟢 <strong>Ouvert à une mobilité dans la fonction publique</strong></p>
+  <p>🌐 <a href="https://gpilliat.github.io"><strong>gpilliat.github.io</strong></a> · 📄 <a href="https://gpilliat.github.io/cv.html">CV complet</a> · 💼 <a href="https://www.linkedin.com/in/gpilliat">LinkedIn</a></p>
 </div>
 
 ---
 
 Analyste-programmeur dans la Marine nationale, puis ingénieur UTBM après une reprise d'études, consultant en ESN (SQLI, puis Logica, aujourd'hui CGI) pour EDF, Air Liquide ou le ministère de l'Intérieur. Depuis 2013, je travaille à la Direction du Numérique de l'Université de Haute-Alsace, entre les directions métiers (Finances, RH, Scolarité, Pilotage) et leurs données.
 
-Claude Code et Gemini font partie de mes outils de travail ; sur mon temps personnel, j'expérimente des architectures RAG en local (Ollama, Mistral). **Toujours en poste, je reste à l'écoute de nouvelles responsabilités en données et décisionnel dans le service public**, à Mulhouse ou en télétravail.
+Claude Code et Gemini font partie de mes outils de travail ; sur mon temps personnel, j'expérimente des architectures RAG en local (Ollama, Mistral). **Toujours en poste, je suis ouvert à une mobilité dans la fonction publique, sur des missions de données et de décisionnel**, partout en France ou en télétravail.
 
 ---
 
