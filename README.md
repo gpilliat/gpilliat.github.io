@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Germain Pilliat</h1>
   <p><strong>Ingénieur d'études · Données, pilotage & intégration SI</strong></p>
-  <p>Je fiabilise des flux de données critiques et je conçois les requêtes et les rapports qui en font des indicateurs pour les directions.</em></p>
+  <p>Je fiabilise des flux de données critiques et je les transforme en indicateurs pour les directions.<br><em>Je fais évoluer des systèmes d'information sans interrompre le service, des architectures historiques aux outils actuels.</em></p>
   <p>🟢 <strong>Fonctionnaire titulaire (IGE, BAP E) · ouvert à une mutation ou un détachement, partout en France ou en télétravail</strong></p>
   <p>🌐 <a href="https://gpilliat.github.io"><strong>gpilliat.github.io</strong></a> · 📄 <a href="https://gpilliat.github.io/cv-fonction-publique.html">CV</a> · 💼 <a href="https://www.linkedin.com/in/gpilliat">LinkedIn</a></p>
 </div>
@@ -10,7 +10,6 @@
 
 Analyste-programmeur dans la Marine nationale, puis ingénieur UTBM après une reprise d'études, consultant en ESN (SQLI, puis Logica, aujourd'hui CGI) pour EDF, Air Liquide ou le ministère de l'Intérieur. Depuis 2013, je travaille à la Direction du Numérique de l'Université de Haute-Alsace, entre les directions métiers (Finances, RH, Scolarité, Pilotage) et leurs données.
 
-J'utilise Claude Code et Gemini au quotidien pour le code, l'analyse SQL et la documentation technique, et je suis de près les architectures RAG locales (Ollama, Mistral), que j'expérimente en veille technique.
 
 ---
 
