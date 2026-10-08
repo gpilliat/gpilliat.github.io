@@ -1,0 +1,44 @@
+<div align="center">
+  <h1>Germain Pilliat</h1>
+  <p><strong>Ingénieur d'études · Bases de données, pilotage & intégration SI</strong></p>
+  <p>Du Cobol aux LLM : je fiabilise des flux de données critiques et je les transforme en indicateurs pour les directions.</p>
+  <p>🟢 <strong>À l'écoute d'opportunités dans le service public</strong></p>
+  <p>🌐 <a href="https://gpilliat.github.io"><strong>gpilliat.github.io</strong></a> · 📄 <a href="https://gpilliat.github.io/cv.html">CV complet</a></p>
+</div>
+
+---
+
+Analyste-programmeur dans la Marine nationale, puis ingénieur UTBM après une reprise d'études, consultant en ESN (SQLI, puis Logica, aujourd'hui CGI) pour EDF, Air Liquide ou le ministère de l'Intérieur. Depuis 2013, je travaille à la Direction du Numérique de l'Université de Haute-Alsace, entre les directions métiers (Finances, RH, Scolarité, Pilotage) et leurs données.
+
+Claude Code et Gemini font partie de mes outils de travail ; sur mon temps personnel, j'expérimente des architectures RAG en local (Ollama, Mistral). **Toujours en poste, je reste à l'écoute de nouvelles responsabilités en données et décisionnel dans le service public**, à Mulhouse ou en télétravail.
+
+---
+
+### Ce que je fais
+
+**Pilotage et décisionnel** — Indicateurs croisant emplois du temps, scolarité et RH : taux d'occupation de 466 salles, ventilation des heures d'enseignement par formation. Vues SQL sur ~2 500 tables et 50 Go de données. BusinessObjects, JasperReports, ReportServer.
+
+**Reprise de systèmes critiques** — Maintien en conditions opérationnelles d'un ETL non documenté (C++/OCCI, PL/SQL Oracle) qui sert de base aux états de paiement des enseignants : rétro-ingénierie, correction de défauts hérités, documentation complète.
+
+**Flux et référentiels** — Talend / Talaxie, synchronisations LDAP, anonymisation RGPD. Finances publiques (GBCP : Chorus, Cocktail GFC), Apogée, ADE Campus.
+
+**Administration système** — Maintenance et durcissement de 8 serveurs Linux de production (RHEL 8/9). Apache, Tomcat, Nginx, Windows Server, IIS, PostgreSQL.
+
+---
+
+### Sélection de projets
+
+| Dépôt | Description |
+| :--- | :--- |
+| [**adestats-documentation**](https://github.com/gpilliat/adestats-documentation) | Reprise et documentation d'un ETL critique de statistiques d'enseignement. |
+| [**migration-jasper-or-vers-rs**](https://github.com/gpilliat/migration-jasper-or-vers-rs) | Migration de rapports JasperReports d'OpenReport vers ReportServer. |
+| [**sebina-sync**](https://github.com/gpilliat/sebina-sync) | Flux Talend de synchronisation des référentiels lecteurs. |
+| [**sql-oracle-cookbook**](https://github.com/gpilliat/sql-oracle-cookbook) | Vues optimisées et requêtes pour les référentiels RH et Finances. |
+| [**linux-admin-toolbox**](https://github.com/gpilliat/linux-admin-toolbox) | Runbooks d'administration pour RHEL 8/9. |
+
+---
+
+### Contact
+
+📍 Mulhouse, Alsace · 📧 gp.cv@posteo.ch  
+🗣️ Anglais (C1 écrit, B1/B2 oral) · Italien (A1) · Arabe (notions)
